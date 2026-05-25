@@ -1,0 +1,20 @@
+name: Meu primeiro pipeline 
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+  steps:
+    - name: baixar o codigo
+    uses: action/checkout@v3
+
+    - name: Rodar a aplicação
+    uses: python3 app.py
+
+    - name: Mesagem de sucesso
+    run: echo " Pipeline com CI/CD com sucesso"
+
+    
+
