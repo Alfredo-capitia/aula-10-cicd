@@ -29,5 +29,5 @@ jobs:
       - name: baixar o codigo
         uses: actions/checkout@v3
 
-     - name: deploy feito
+      - name: deploy feito
        run: echo " deploy feito com suceeso"
