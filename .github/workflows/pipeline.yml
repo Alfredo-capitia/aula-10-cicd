@@ -1,15 +1,33 @@
-name: Meu primeiro pipeline
+name: Pipeline avançado
 on:
   push:
     branches:
       - main
 jobs:
-  build:
+  testes: 
     runs-on: ubuntu-latest
     steps:
-      - name: Baixar codigo
-        uses: actions/checkout@v3
-      - name: Rodar aplicacao
-        run: python3 app.py
-      - name: Mensagem sucesso
-        run: echo "Pipeline CI/CD sucesso!"
+      - name: baixar o codigo
+      uses: actions/checkout@v3
+
+      - name: testing aplication
+      run: python3 app.py
+  build:
+    runs-on: ubuntu-latest
+    needs: testes
+    steps:
+      - name: baixar o codigo
+      uses: actions/checkout@v3
+
+      - name: build feito 
+      run: echo " imagem Docker construida"
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: baixar o codigo
+      uses: actions/checkout@v3
+
+     - name: deploy feito
+     run: echo " deploy feito com suceeso"
