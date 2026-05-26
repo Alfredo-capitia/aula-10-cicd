@@ -22,9 +22,21 @@ jobs:
       - name: build feito 
         run: echo " imagem Docker construida"
 
-  deploy:
+  segurança:
     runs-on: ubuntu-latest
     needs: build
+    steps:
+
+      - name: baixar o codigo
+        uses: actions/checkout@v3
+
+      - name: segurança feita
+        run: echo: " Verificação de segirança aprovada"
+
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: segurança
     steps:
       - name: baixar o codigo
         uses: actions/checkout@v3
