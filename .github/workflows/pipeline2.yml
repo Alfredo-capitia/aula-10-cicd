@@ -12,8 +12,9 @@ jobs:
       - name: baixar o codigo
         uses: actions/checkout@v3
 
-      - name: teste finalizado
-        run: echo " teste finalizado com sucesso"
+      - name: testing o codigo
+        run: python3 app.py
+
 
   deploy: 
     runs-on: ubuntu-latest
