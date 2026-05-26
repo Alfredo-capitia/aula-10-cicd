@@ -1,0 +1,27 @@
+name: deploy de testes 
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  testes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: baixar o codigo
+        uses: actions/checkout@v3
+
+      - name: teste finalizado
+        run: echo " teste finalizado com sucesso"
+
+  deploy: 
+    runs-on: ubuntu-latest
+    needs: testes
+    steps:
+      - name: baixar codigo
+        uses: actions/checkout@v3
+
+      - name: depoly finalizado
+        run: echo " deploy finalizado com sucesso
+
