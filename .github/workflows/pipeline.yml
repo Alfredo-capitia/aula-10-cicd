@@ -30,4 +30,4 @@ jobs:
         uses: actions/checkout@v3
 
       - name: deploy feito
-       run: echo " deploy feito com suceeso"
+        run: echo " deploy feito com suceeso"
